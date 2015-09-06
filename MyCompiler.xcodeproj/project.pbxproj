@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42726AA21B9C369D0058888F /* Compiler1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42726AA11B9C369D0058888F /* Compiler1.swift */; };
+		42726AA41B9C36B40058888F /* Compiler2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42726AA31B9C36B40058888F /* Compiler2.swift */; };
+		42726AA61B9C36C60058888F /* Compiler3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42726AA51B9C36C60058888F /* Compiler3.swift */; };
 		42FAC8401B90984000C2E75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAC83F1B90984000C2E75B /* AppDelegate.swift */; };
 		42FAC8421B90984000C2E75B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAC8411B90984000C2E75B /* ViewController.swift */; };
 		42FAC8451B90984000C2E75B /* MyCompiler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42FAC8431B90984000C2E75B /* MyCompiler.xcdatamodeld */; };
@@ -26,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42726AA11B9C369D0058888F /* Compiler1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compiler1.swift; sourceTree = "<group>"; };
+		42726AA31B9C36B40058888F /* Compiler2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compiler2.swift; sourceTree = "<group>"; };
+		42726AA51B9C36C60058888F /* Compiler3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compiler3.swift; sourceTree = "<group>"; };
 		42FAC83A1B90984000C2E75B /* MyCompiler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCompiler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FAC83E1B90984000C2E75B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42FAC83F1B90984000C2E75B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +62,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42726AA01B9C366F0058888F /* MyClasses */ = {
+			isa = PBXGroup;
+			children = (
+				42726AA11B9C369D0058888F /* Compiler1.swift */,
+				42726AA31B9C36B40058888F /* Compiler2.swift */,
+				42726AA51B9C36C60058888F /* Compiler3.swift */,
+			);
+			name = MyClasses;
+			sourceTree = "<group>";
+		};
 		42FAC8311B90983F00C2E75B = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +93,7 @@
 		42FAC83C1B90984000C2E75B /* MyCompiler */ = {
 			isa = PBXGroup;
 			children = (
+				42726AA01B9C366F0058888F /* MyClasses */,
 				42FAC83F1B90984000C2E75B /* AppDelegate.swift */,
 				42FAC8411B90984000C2E75B /* ViewController.swift */,
 				42FAC8461B90984000C2E75B /* Images.xcassets */,
@@ -211,8 +228,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42726AA61B9C36C60058888F /* Compiler3.swift in Sources */,
 				42FAC8421B90984000C2E75B /* ViewController.swift in Sources */,
 				42FAC8451B90984000C2E75B /* MyCompiler.xcdatamodeld in Sources */,
+				42726AA21B9C369D0058888F /* Compiler1.swift in Sources */,
+				42726AA41B9C36B40058888F /* Compiler2.swift in Sources */,
 				42FAC8401B90984000C2E75B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +424,7 @@
 				42FAC85B1B90984000C2E75B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42FAC85C1B90984000C2E75B /* Build configuration list for PBXNativeTarget "MyCompilerTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +433,7 @@
 				42FAC85E1B90984000C2E75B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
