@@ -157,15 +157,6 @@ class TokenString {
         
         for char in code {
             
-            // if new line detected
-            if char == "\n" {
-                if temp != "" {
-                    tokensString.append((temp,lineNumber.description))
-                    temp = ""
-                }
-                lineNumber++
-                continue
-            }
             
             // string detected
             if char == "\""{
@@ -210,10 +201,22 @@ class TokenString {
                 
             }
             
+            // if new line detected
+            if char == "\n" || char == "\r" {
+                if temp != "" {
+                    tokensString.append((temp,lineNumber.description))
+                    temp = ""
+                }
+                lineNumber++
+                continue
+            }
+            
             if stringFlag{
                 temp.append(char)
                 continue
             }
+            
+            
             
             // character detected
             if char == "'"{

@@ -13,7 +13,6 @@ import Foundation
 // mohsin
 // for Identifier (start with small char then follow small, capital char or digit , eg : aBC, c2BC, cA4dC)
 
-
 enum ParsingTypes{
     case MyIdentifier
     case IntConstatnt
@@ -39,7 +38,7 @@ class Parsing{
             return transitionTable[state][2]
         }
         
-        return 3
+        return 2
     }
     //
     private class func intConstatnt(state : Int, char : Character) -> Int{
