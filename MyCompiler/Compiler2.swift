@@ -10,39 +10,6 @@ import Foundation
 
 
 
-class MyToken {
-    var value : String
-    var classType : String
-    var lineNumber : String
-    
-    init(value: String, classType: String, lineNumber: String){
-        self.value = value
-        self.classType = classType
-        self.lineNumber = lineNumber
-    }
-    
-}
-
-extension String {
-    var lastChar : Character?{
-        get{
-            let length = count(self)
-            if  length > 0{
-                var count = 0
-                for char in self{
-                    if count == length-1{
-                        return char
-                    }
-                    count++
-                }
-            }
-            return nil
-        }
-    }
-}
-
-
-
 func isPunctuator(char : Character) -> Bool{
     
     switch char {
@@ -89,19 +56,19 @@ func checkForClasses(temp : String ,char : Character, nextChar : Character) -> B
         
         
     case "0"..."9","a"..."z","A"..."Z":
-        if temp.lastChar == "=" {
+        if temp[temp.endIndex.predecessor()] == "=" {
             return true
         }
-        else if temp.lastChar == "+" {
+        else if temp[temp.endIndex.predecessor()] == "+" {
             return true
         }
-        else if temp.lastChar == "-" {
+        else if temp[temp.endIndex.predecessor()] == "-" {
             return true
         }
-        else if temp.lastChar == "*" {
+        else if temp[temp.endIndex.predecessor()] == "*" {
             return true
         }
-        else if temp.lastChar == "/" {
+        else if temp[temp.endIndex.predecessor()] == "/" {
             return true
         }
         return false
@@ -193,7 +160,7 @@ func generateTokes(code : String) -> [String]{
         }
         // comment detected
         if char == "/"{
-            if temp.lastChar == "/" {
+            if temp[temp.endIndex.predecessor()] == "/" {
                 commentsFlag = true
                 temp.removeAtIndex(temp.endIndex.predecessor())
                 if temp != "" {
@@ -281,12 +248,12 @@ func generateTokes(code : String) -> [String]{
 }
 
 
-
-var str = "void Main() a++===5.5+=**/= { \n int a = 10 \n float sAA = 1.3 \n }"
-var str1 = "abc+=d--e*=5'd'6 \"mohsin--e*=56 ds\"a //haha 'd' mmmm sa\n "
-var str2 = "abc '\\sagg' sa"
-
-
-println(generateTokes(str1))
+//
+//var str = "void Main() a++===5.5+=**/= { \n int a = 10 \n float sAA = 1.3 \n }"
+//var str1 = "abc+=d--e*=5'd'6 \"mohsin--e*=56 ds\"a //haha 'd' mmmm sa\n "
+//var str2 = "abc '\\sagg' sa"
+//
+//
+//println(generateTokes(str1))
 
 
