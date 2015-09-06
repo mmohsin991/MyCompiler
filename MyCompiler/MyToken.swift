@@ -31,8 +31,19 @@ class MyToken {
     
     class func stringToMyToken(str : String, lineNumber : String) -> MyToken{
         
+        // for comments
+        if str.hasPrefix("$COMMENTS--") {
+            var str1 = str
+            let range = str.startIndex...advance(str.startIndex, 11)
+            str1.removeRange(range)
+            return MyToken(value: str1, classType: "Comments", lineNumber: lineNumber)
+        }
+        // for . contant
+        else if str == "." {
+            return MyToken(value: str, classType: ".", lineNumber: lineNumber)
+        }
         // for Float contant
-        if Parsing.doParsing(str, pasringType: ParsingTypes.FloatConstatnt) {
+        else if Parsing.doParsing(str, pasringType: ParsingTypes.FloatConstatnt) {
             return MyToken(value: str, classType: "FloatConstant", lineNumber: lineNumber)
         }
             // for Character contant
@@ -151,10 +162,56 @@ class MyToken {
             
         case "Void" :
             return true
-            
         case "Main" :
             return true
-        
+        case "if" :
+            return true
+        case "else" :
+            return true
+        case "for" :
+            return true
+        case "while" :
+            return true
+        case "var" :
+            return true
+        case "break" :
+            return true
+        case "continue" :
+            return true
+        case "class" :
+            return true
+        case "struct" :
+            return true
+        case "in" :
+            return true
+        case "nil" :
+            return true
+        case "String" :
+            return true
+        case "string" :
+            return true
+        case "char" :
+            return true
+        case "Char" :
+            return true
+        case "int" :
+            return true
+        case "Int" :
+            return true
+        case "float" :
+            return true
+        case "Float" :
+            return true            
+        case "AnyObject" :
+            return true
+        case "return" :
+            return true
+        case "true" :
+            return true
+        case "false" :
+            return true
+        case "Char" :
+            return true
         default:
             return false
 

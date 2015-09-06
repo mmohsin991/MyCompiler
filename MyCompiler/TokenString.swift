@@ -69,7 +69,7 @@ class TokenString {
         
         switch char{
             
-        case "0"..."9","a"..."z","A"..."Z":
+        case "0"..."9":
             if temp.lastChar == "=" {
                 return true
             }
@@ -87,6 +87,38 @@ class TokenString {
             }
             return false
             
+        case "a"..."z","A"..."Z":
+            if temp.lastChar == "=" {
+                return true
+            }
+            else if temp.lastChar == "+" {
+                return true
+            }
+            else if temp.lastChar == "-" {
+                return true
+            }
+            else if temp.lastChar == "*" {
+                return true
+            }
+            else if temp.lastChar == "/" {
+                return true
+            }
+            else if temp.lastChar == "." {
+                return true
+            }
+            else if temp.lastChar == "!" {
+                return true
+            }
+            return false
+            
+        case "." :
+            if temp >= "0" && temp <= "9" {
+                return false
+            }
+            else {
+                return true
+            }
+            
         case "=" :
             if temp == "=" {
                 return false
@@ -101,6 +133,9 @@ class TokenString {
                 return false
             }
             else if temp == "/" {
+                return false
+            }
+            else if temp == "!" {
                 return false
             }
             else {
@@ -158,6 +193,28 @@ class TokenString {
         for char in code {
             
             
+            // comment detected
+            if char == "/"{
+                if temp.lastChar == "/" {
+                    commentsFlag = true
+                    temp.removeAtIndex(temp.endIndex.predecessor())
+                    if temp != "" {
+                        tokensString.append((temp,lineNumber.description))
+                        temp = ""
+                    }
+                    continue
+                }
+            }
+            if commentsFlag{
+                if char == "\n" {
+                    commentsFlag = false
+                    temp = "$COMMENTS--"+temp
+                    tokensString.append((temp,lineNumber.description))
+                    temp = ""
+                }
+                temp.append(char)
+                continue
+            }
             // string detected
             if char == "\""{
                 if !stringFlag {
@@ -177,29 +234,6 @@ class TokenString {
                     continue
                 }
             }
-            // comment detected
-            if char == "/"{
-                if temp[temp.endIndex.predecessor()] == "/" {
-                    commentsFlag = true
-                    temp.removeAtIndex(temp.endIndex.predecessor())
-                    if temp != "" {
-                        tokensString.append((temp,lineNumber.description))
-                        temp = ""
-                    }
-                    continue
-                }
-            }
-            if commentsFlag{
-                if char == "\n" {
-                    commentsFlag = false
-                    temp = "$COMMENTS--"+temp
-                    tokensString.append((temp,lineNumber.description))
-                    temp = ""
-                }
-                temp.append(char)
-                continue
-                
-            }
             
             // if new line detected
             if char == "\n" || char == "\r" {
@@ -210,7 +244,7 @@ class TokenString {
                 lineNumber++
                 continue
             }
-            
+            // string
             if stringFlag{
                 temp.append(char)
                 continue
