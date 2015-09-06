@@ -34,9 +34,10 @@ class MyToken {
         // for comments
         if str.hasPrefix("$COMMENTS--") {
             var str1 = str
-            let range = str.startIndex...advance(str.startIndex, 11)
+            let range = str.startIndex...advance(str.startIndex, 10)
             str1.removeRange(range)
             return MyToken(value: str1, classType: "Comments", lineNumber: lineNumber)
+            
         }
         // for . contant
         else if str == "." {
@@ -149,7 +150,7 @@ class MyToken {
             
             // Identifier constant
         else if Parsing.doParsing(str, pasringType: ParsingTypes.MyIdentifier) {
-            return MyToken(value: str, classType: "Identifire", lineNumber: lineNumber)
+            return MyToken(value: str, classType: "Identifier", lineNumber: lineNumber)
         }
         
         return MyToken(value: str, classType: "SYNTAX ERROR", lineNumber: lineNumber)

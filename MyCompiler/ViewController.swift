@@ -82,7 +82,12 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             if self.myTokens[row].classType == "SYNTAX ERROR" {
                 cellView.textField?.textColor = NSColor.redColor()
             }
-
+            else if self.myTokens[row].classType == "Identifier" {
+                cellView.textField?.textColor = NSColor.blueColor()
+            }
+            else if self.myTokens[row].classType == "KeyWord" {
+                cellView.textField?.textColor = NSColor.darkGrayColor()
+            }
         }
         else if tableColumn?.identifier == "Value" {
             

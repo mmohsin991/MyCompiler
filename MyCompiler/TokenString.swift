@@ -193,6 +193,8 @@ class TokenString {
         for char in code {
             
             
+            
+            
             // comment detected
             if char == "/"{
                 if temp.lastChar == "/" {
@@ -206,15 +208,29 @@ class TokenString {
                 }
             }
             if commentsFlag{
-                if char == "\n" {
+                if char == "\n" || char == "\r"{
                     commentsFlag = false
                     temp = "$COMMENTS--"+temp
                     tokensString.append((temp,lineNumber.description))
                     temp = ""
+                    lineNumber++
                 }
-                temp.append(char)
+                else{
+                    temp.append(char)
+                }
                 continue
             }
+            
+            // if new line detected
+            if char == "\n" || char == "\r" {
+                if temp != "" {
+                    tokensString.append((temp,lineNumber.description))
+                    temp = ""
+                }
+                lineNumber++
+                continue
+            }
+            
             // string detected
             if char == "\""{
                 if !stringFlag {
@@ -235,15 +251,7 @@ class TokenString {
                 }
             }
             
-            // if new line detected
-            if char == "\n" || char == "\r" {
-                if temp != "" {
-                    tokensString.append((temp,lineNumber.description))
-                    temp = ""
-                }
-                lineNumber++
-                continue
-            }
+            
             // string
             if stringFlag{
                 temp.append(char)
@@ -301,8 +309,15 @@ class TokenString {
             }
         }
         
+        // end of the file
         if temp != "" {
-            tokensString.append((temp,lineNumber.description))
+            if commentsFlag{
+                temp = "$COMMENTS--"+temp
+                tokensString.append((temp,lineNumber.description))
+            }else{
+                tokensString.append((temp,lineNumber.description))
+            }
+            
         }
         
         return tokensString
