@@ -137,23 +137,22 @@ class TokenString {
             return false
         }
         
-        return false
     }
     
     
     
-    class func generateTokens(code : String) -> [String]{
+    class func generateTokens(code : String) -> [(String,String)]{
         
         var temp = ""
-        var tokensString = [String]()
-        var tokensString = [String]()
-
+        // [value and lineNumber]
+        var tokensString = [(String,String)]()
         
         var stringFlag = false
         var commentsFlag = false
         var charaterFlag = false
         
-        var lineNumber = 0
+        // line number
+        var lineNumber = 1
         
         
         for char in code {
@@ -161,7 +160,7 @@ class TokenString {
             // if new line detected
             if char == "\n" {
                 if temp != "" {
-                    tokensString.append(temp)
+                    tokensString.append((temp,lineNumber.description))
                     temp = ""
                 }
                 lineNumber++
@@ -172,7 +171,7 @@ class TokenString {
             if char == "\""{
                 if !stringFlag {
                     if temp != "" {
-                        tokensString.append(temp)
+                        tokensString.append((temp,lineNumber.description))
                         temp = ""
                     }
                     stringFlag = true
@@ -180,7 +179,7 @@ class TokenString {
                 }else{
                     temp.append(char)
                     if temp != "" {
-                        tokensString.append(temp)
+                        tokensString.append((temp,lineNumber.description))
                         temp = ""
                     }
                     stringFlag = false
@@ -193,7 +192,7 @@ class TokenString {
                     commentsFlag = true
                     temp.removeAtIndex(temp.endIndex.predecessor())
                     if temp != "" {
-                        tokensString.append(temp)
+                        tokensString.append((temp,lineNumber.description))
                         temp = ""
                     }
                     continue
@@ -203,7 +202,7 @@ class TokenString {
                 if char == "\n" {
                     commentsFlag = false
                     temp = "$COMMENTS--"+temp
-                    tokensString.append(temp)
+                    tokensString.append((temp,lineNumber.description))
                     temp = ""
                 }
                 temp.append(char)
@@ -220,13 +219,13 @@ class TokenString {
             if char == "'"{
                 if !charaterFlag {
                     if temp != "" {
-                        tokensString.append(temp)
+                        tokensString.append((temp,lineNumber.description))
                         temp = ""
                     }
                     charaterFlag = true
                 }else{
                     temp.append(char)
-                    tokensString.append(temp)
+                    tokensString.append((temp,lineNumber.description))
                     temp = ""
                     charaterFlag = false
                     continue
@@ -243,15 +242,15 @@ class TokenString {
             if isPunctuator(char) {
                 // if temp has any value
                 if temp != "" {
-                    tokensString.append(temp)
+                    tokensString.append((temp,lineNumber.description))
                 }
-                tokensString.append(String(char))
+                tokensString.append((String(char), lineNumber.description))
                 temp = ""
             }
             else if wordBreaker(temp, char: char){
                 // if temp has any value
                 if temp != "" {
-                    tokensString.append(temp)
+                    tokensString.append((temp,lineNumber.description))
                 }
                 temp = ""
                 if char != " "{
@@ -266,7 +265,7 @@ class TokenString {
         }
         
         if temp != "" {
-            tokensString.append(temp)
+            tokensString.append((temp,lineNumber.description))
         }
         
         return tokensString

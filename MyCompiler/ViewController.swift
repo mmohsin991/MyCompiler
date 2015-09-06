@@ -28,8 +28,8 @@ class ViewController: NSViewController {
         var tokenStringArr = TokenString.generateTokens(self.str)
         var myTokenString = [MyToken]()
         for tokenStr in tokenStringArr{
-            if tokenStr != " "{
-                let myToken = MyToken.stringToMyToken(tokenStr, lineNumber: "1")
+            if tokenStr.0 != " "{
+                let myToken = MyToken.stringToMyToken(tokenStr.0, lineNumber: tokenStr.1)
                 myTokenString.append(myToken)
                 println(tokenStr)
             }
