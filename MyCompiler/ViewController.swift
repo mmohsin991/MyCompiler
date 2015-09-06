@@ -14,11 +14,30 @@ class ViewController: NSViewController {
     
     
     var filePath : String?
+    var str = "void Main() a++===5.5+=**/= { \n int a = 10 \n float sAA = 1.3 \n }"
+    var str1 = "abc+-d--e*=5'd'6 \"mohsin--e*=56 ds\"a //haha 'd' mmmm sa\n "
+    var str2 = "abc '\\sagg' sa"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        var tokenStringArr = TokenString.generateTokens(self.str)
+        var myTokenString = [MyToken]()
+        for tokenStr in tokenStringArr{
+            if tokenStr != " "{
+                let myToken = MyToken.stringToMyToken(tokenStr, lineNumber: "1")
+                myTokenString.append(myToken)
+                println(tokenStr)
+            }
+        }
+        for token in myTokenString{
+            token.decs()
+        }
+        
     }
 
     override var representedObject: AnyObject? {
@@ -28,6 +47,13 @@ class ViewController: NSViewController {
     }
 
 
+    
+    
+    
+    
+    
+    
+    
     
     @IBAction func openFile(sender: NSButton) {
         let panel = NSOpenPanel()
