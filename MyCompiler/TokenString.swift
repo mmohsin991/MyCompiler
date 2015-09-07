@@ -9,24 +9,6 @@
 import Foundation
 
 
-extension String {
-    var lastChar : Character?{
-        get{
-            let length = count(self)
-            if  length > 0{
-                var count = 0
-                for char in self{
-                    if count == length-1{
-                        return char
-                    }
-                    count++
-                }
-            }
-            return nil
-        }
-    }
-}
-
 
 class TokenString {
     

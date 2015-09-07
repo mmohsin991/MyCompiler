@@ -13,14 +13,6 @@ import Foundation
 // mohsin
 // for Identifier (start with small char then follow small, capital char or digit , eg : aBC, c2BC, cA4dC)
 
-enum ParsingTypes{
-    case MyIdentifier
-    case IntConstatnt
-    case StringConstatnt
-    case FloatConstatnt
-    case CharConstatnt
-}
-
 
 class Parsing{
     
@@ -63,10 +55,11 @@ class Parsing{
         
         var transitionTable = [[1,3],[2,1],[3,3],[3,3]]
         
-        if char == "\""{
+        // all types of " characters
+        if char == "\"" || char == "“" || char == "”"{
             return transitionTable[state][0]
         }
-        else if char != "\"" {
+        else if char != "\"" || char != "“" || char != "”" {
             return transitionTable[state][1]
         }
         

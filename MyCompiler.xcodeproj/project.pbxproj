@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		421C9EF31B9DA28F006B48B9 /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C9EF21B9DA28F006B48B9 /* Miscellaneous.swift */; };
 		42726AA21B9C369D0058888F /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42726AA11B9C369D0058888F /* Parsing.swift */; };
 		42726AA41B9C36B40058888F /* TokenString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42726AA31B9C36B40058888F /* TokenString.swift */; };
 		42726AA61B9C36C60058888F /* MyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42726AA51B9C36C60058888F /* MyToken.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		421C9EF21B9DA28F006B48B9 /* Miscellaneous.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Miscellaneous.swift; sourceTree = "<group>"; };
 		42726AA11B9C369D0058888F /* Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
 		42726AA31B9C36B40058888F /* TokenString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenString.swift; sourceTree = "<group>"; };
 		42726AA51B9C36C60058888F /* MyToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyToken.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				42B20ABD1B9CBFA40042779F /* Blue_dot.png */,
+				421C9EF21B9DA28F006B48B9 /* Miscellaneous.swift */,
 				42726AA11B9C369D0058888F /* Parsing.swift */,
 				42726AA31B9C36B40058888F /* TokenString.swift */,
 				42726AA51B9C36C60058888F /* MyToken.swift */,
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42726AA61B9C36C60058888F /* MyToken.swift in Sources */,
+				421C9EF31B9DA28F006B48B9 /* Miscellaneous.swift in Sources */,
 				42FAC8421B90984000C2E75B /* ViewController.swift in Sources */,
 				42FAC8451B90984000C2E75B /* MyCompiler.xcdatamodeld in Sources */,
 				42726AA21B9C369D0058888F /* Parsing.swift in Sources */,

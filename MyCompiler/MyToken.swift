@@ -31,6 +31,9 @@ class MyToken {
     
     class func stringToMyToken(str : String, lineNumber : String) -> MyToken{
         
+        println(str)
+        println(str[str.startIndex].unicodeScalarCodePoint())
+        
         // for comments
         if str.hasPrefix("$COMMENTS--") {
             var str1 = str
@@ -47,9 +50,37 @@ class MyToken {
         else if Parsing.doParsing(str, pasringType: ParsingTypes.FloatConstatnt) {
             return MyToken(value: str, classType: "FloatConstant", lineNumber: lineNumber)
         }
-            // for Character contant
-        else if str[str.startIndex] == "'" && str[str.endIndex.predecessor()] == "'"{
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+        
+        if str[str.startIndex] == "\u{2018}"||str[str.startIndex] == "'" && str[str.endIndex.predecessor()] == "\u{2018}"||str[str.endIndex.predecessor()] == "'"{
             var str1 = str
+            
             str1.removeAtIndex(str1.startIndex)
             str1.removeAtIndex(str1.endIndex.predecessor())
             if Parsing.doParsing(str1, pasringType: ParsingTypes.CharConstatnt){
@@ -59,6 +90,37 @@ class MyToken {
                 return MyToken(value: str1, classType: "SYNTAX ERROR", lineNumber: lineNumber)
             }
         }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             // for String contant
         else if Parsing.doParsing(str, pasringType: ParsingTypes.StringConstatnt) {
             var str1 = str
