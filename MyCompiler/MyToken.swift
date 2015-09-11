@@ -79,6 +79,11 @@ class MyToken {
             return MyToken(value: str, classType: "Int Constant", lineNumber: lineNumber)
             
         }
+            // for Bool contant
+        else if Parsing.doParsing(str, pasringType: ParsingTypes.BoolConstatnt) {
+            return MyToken(value: str, classType: "Bool Constant", lineNumber: lineNumber)
+            
+        }
             
             
             // if its a punctuattor then it should be a count 1
@@ -87,7 +92,7 @@ class MyToken {
                 return MyToken(value: str, classType: str, lineNumber: lineNumber)
             }
             else{
-                return MyToken(value: str, classType: "SYNTAX ERROR", lineNumber: lineNumber)
+                return MyToken(value: str, classType: "LEXICAL ERROR", lineNumber: lineNumber)
             }
         }
             // for Assignment and Rel Operators(only <=, >=, !=, ==)
@@ -169,63 +174,52 @@ class MyToken {
         
         switch value {
             
-        case "Void" :
+        case "VOID" :
             return true
-        case "Main" :
+        case "MAIN" :
             return true
-        case "if" :
+        case "IF" :
             return true
-        case "else" :
+        case "ELSE" :
             return true
-        case "for" :
+        case "FOR" :
             return true
-        case "while" :
+        case "FORE" :
             return true
-        case "var" :
+        case "WHILE" :
             return true
-        case "break" :
+        case "VAR" :
             return true
-        case "continue" :
+        case "BREAK" :
             return true
-        case "class" :
+        case "CONTINUE" :
             return true
-        case "struct" :
+        case "CLASS" :
             return true
-        case "in" :
+        case "STRUCT" :
             return true
-        case "nil" :
+        case "IN" :
             return true
-        case "String" :
+        case "NIL" :
             return true
-        case "string" :
+        case "STRING" :
             return true
-        case "char" :
+        case "CHAR" :
             return true
-        case "Char" :
+        case "INT" :
             return true
-        case "int" :
-            return true
-        case "Int" :
-            return true
-        case "float" :
-            return true
-        case "Float" :
+        case "FLOAT" :
             return true            
         case "AnyObject" :
             return true
-        case "return" :
+        case "RETURN" :
             return true
         case "true" :
             return true
         case "false" :
             return true
-        case "Char" :
-            return true
+
             
-        case "INT" :
-            return true
-        case "CHAR" :
-            return true
             
             
             

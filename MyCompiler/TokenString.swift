@@ -67,6 +67,12 @@ class TokenString {
             else if temp.lastChar == "/" {
                 return true
             }
+            else if temp.lastChar == "&" {
+                return true
+            }
+            else if temp.lastChar == "|" {
+                return true
+            }
             return false
             
         case "a"..."z","A"..."Z":
@@ -83,6 +89,12 @@ class TokenString {
                 return true
             }
             else if temp.lastChar == "/" {
+                return true
+            }
+            else if temp.lastChar == "&" {
+                return true
+            }
+            else if temp.lastChar == "|" {
                 return true
             }
             else if temp.lastChar == "." {
@@ -140,6 +152,21 @@ class TokenString {
             else {
                 return true
             }
+            
+        case "&" :
+            if temp == "&" {
+                return false
+            }
+            else {
+                return true
+            }
+        case "|" :
+            if temp == "|" {
+                return false
+            }
+            else {
+                return true
+            }
         case "*" :
             return true
             
@@ -149,6 +176,8 @@ class TokenString {
         case "%" :
             return true
             
+        case "!" :
+            return true
             
         default :
             return false

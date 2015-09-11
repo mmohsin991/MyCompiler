@@ -118,8 +118,7 @@ class Parsing{
     }
     
     
-    
-    
+
     
     
     private class func DFAParsing(inputStr : String, trasitionFunction: (Int,Character) -> Int, finalStates: [Int]) -> Bool{
@@ -131,12 +130,10 @@ class Parsing{
         }
         for finalState in finalStates{
             if state == finalState{
-                println("final state")
                 return true
             }
         }
         
-        println("No final state")
         return false
     }
 
@@ -154,6 +151,13 @@ class Parsing{
             return DFAParsing(value, trasitionFunction: stringConstatnt, finalStates: [2])
         case .MyIdentifier:
             return DFAParsing(value, trasitionFunction: myIdentifier, finalStates: [1])
+        case .BoolConstatnt:
+            if value == "true" || value == "false"{
+                return true
+            }
+            else{
+                return false
+            }
         }
         
         return false

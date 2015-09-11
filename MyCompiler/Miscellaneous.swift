@@ -15,6 +15,7 @@ enum ParsingTypes{
     case StringConstatnt
     case FloatConstatnt
     case CharConstatnt
+    case BoolConstatnt
 }
 
 

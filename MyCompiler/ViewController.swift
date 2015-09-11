@@ -148,6 +148,9 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
                         println(panel.URL)
                     if let url = panel.URL {
                         self.filePath = url.path
+                        var error : NSError?
+                        self.txtView.string?.writeToFile(self.filePath!, atomically: true,
+                            encoding: NSUTF8StringEncoding, error: &error)
                     }
                 }
             }
