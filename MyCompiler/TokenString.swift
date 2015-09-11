@@ -46,7 +46,7 @@ class TokenString {
         
     }
     
-    // return it will break the word or not
+    // return it will break the word(string) or not
     private class func wordBreaker(temp : String ,char : Character) -> Bool {
         
         switch char{
@@ -175,8 +175,6 @@ class TokenString {
         for char in code {
             
             
-            
-            
             // comment detected
             if char == "/"{
                 if temp.lastChar == "/" {
@@ -214,7 +212,7 @@ class TokenString {
             }
             
             // string detected
-            if char == "\""{
+            if char == "\"" || char == "“" || char == "”" {
                 if !stringFlag {
                     if temp != "" {
                         tokensString.append((temp,lineNumber.description))
@@ -241,9 +239,8 @@ class TokenString {
             }
             
             
-            
             // character detected
-            if char == "'"{
+            if char == "'" || char == "’" || char == "‘"{
                 if !charaterFlag {
                     if temp != "" {
                         tokensString.append((temp,lineNumber.description))

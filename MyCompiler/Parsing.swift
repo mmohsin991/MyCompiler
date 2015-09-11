@@ -103,7 +103,7 @@ class Parsing{
         if char == "\\"{
             return transitionTable[state][0]
         }
-        else if char == "'"||char == "+"||char == "a"||char == "n"||char == "r"||char == "o"{
+        else if char == "’" || char == "‘" || char == "'"||char == "+"||char == "a"||char == "n"||char == "r"||char == "o"{
             return transitionTable[state][1]
         }
         else if char == "\""{

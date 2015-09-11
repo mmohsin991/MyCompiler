@@ -51,34 +51,9 @@ class MyToken {
             return MyToken(value: str, classType: "FloatConstant", lineNumber: lineNumber)
         }
             
+        // for Char contant
+        if str[str.startIndex] == "’" || str[str.startIndex] == "‘" || str[str.startIndex] == "'" && str[str.endIndex.predecessor()] == "’" || str[str.endIndex.predecessor()] == "‘" || str[str.endIndex.predecessor()] == "'"{
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-        
-        if str[str.startIndex] == "\u{2018}"||str[str.startIndex] == "'" && str[str.endIndex.predecessor()] == "\u{2018}"||str[str.endIndex.predecessor()] == "'"{
             var str1 = str
             
             str1.removeAtIndex(str1.startIndex)
@@ -90,35 +65,6 @@ class MyToken {
                 return MyToken(value: str1, classType: "SYNTAX ERROR", lineNumber: lineNumber)
             }
         }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             
             
             // for String contant
@@ -275,6 +221,14 @@ class MyToken {
             return true
         case "Char" :
             return true
+            
+        case "INT" :
+            return true
+        case "CHAR" :
+            return true
+            
+            
+            
         default:
             return false
 
