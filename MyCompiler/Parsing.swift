@@ -63,9 +63,29 @@ class Parsing{
             return transitionTable[state][1]
         }
         
+        return 3
+    }
+    
+    private class func stringConstatnt1(state : Int, char : Character) -> Int{
+        
+        var transitionTable = [[1,3,3],[2,3,1],[4,4,4],[1,1,1],[4,4,4]]
+        
+        // all types of " characters
+        if char == "\"" || char == "“" || char == "”"{
+            return transitionTable[state][0]
+        }
+            // all types of " characters
+        else if char == "\\" {
+                return transitionTable[state][1]
+            }
+        else if char != "\"" || char != "“" || char != "”" || char != "\\"{
+            return transitionTable[state][2]
+        }
+        
         
         return 3
     }
+    
     
     
     private class func floatConstatnt(state : Int, char : Character) -> Int{
@@ -148,7 +168,7 @@ class Parsing{
         case .FloatConstatnt:
             return DFAParsing(value, trasitionFunction: floatConstatnt, finalStates: [2,4])
         case .StringConstatnt:
-            return DFAParsing(value, trasitionFunction: stringConstatnt, finalStates: [2])
+            return DFAParsing(value, trasitionFunction: stringConstatnt1, finalStates: [2])
         case .MyIdentifier:
             return DFAParsing(value, trasitionFunction: myIdentifier, finalStates: [1])
         case .BoolConstatnt:

@@ -62,7 +62,7 @@ class MyToken {
                 return MyToken(value: str1, classType: "CharConstant", lineNumber: lineNumber)
             }
             else{
-                return MyToken(value: str1, classType: "SYNTAX ERROR", lineNumber: lineNumber)
+                return MyToken(value: str1, classType: "LEXICAL ERROR", lineNumber: lineNumber)
             }
         }
             
@@ -110,11 +110,11 @@ class MyToken {
                     return MyToken(value: str, classType: "RelOP", lineNumber: lineNumber)
                 }
                 else{
-                    return MyToken(value: str, classType: "SYNTAX ERROR", lineNumber: lineNumber)
+                    return MyToken(value: str, classType: "LEXICAL ERROR", lineNumber: lineNumber)
                 }
             }
             else{
-                return MyToken(value: str, classType: "SYNTAX ERROR", lineNumber: lineNumber)
+                return MyToken(value: str, classType: "LEXICAL ERROR", lineNumber: lineNumber)
             }
         }
             // Relational Operator ( < , >)
@@ -123,7 +123,7 @@ class MyToken {
                 return MyToken(value: str, classType: "RelOP", lineNumber: lineNumber)
             }
             else{
-                return MyToken(value: str, classType: "SYNTAX ERROR", lineNumber: lineNumber)
+                return MyToken(value: str, classType: "LEXICAL ERROR", lineNumber: lineNumber)
             }
         }
             
@@ -139,7 +139,7 @@ class MyToken {
                 return MyToken(value: str, classType: "INC/DEC", lineNumber: lineNumber)
             }
             else{
-                return MyToken(value: str, classType: "SYNTAX ERROR", lineNumber: lineNumber)
+                return MyToken(value: str, classType: "LEXICAL ERROR", lineNumber: lineNumber)
             }
         }
             
@@ -149,7 +149,7 @@ class MyToken {
                 return MyToken(value: str, classType: "ArthOp", lineNumber: lineNumber)
             }
             else{
-                return MyToken(value: str, classType: "SYNTAX ERROR", lineNumber: lineNumber)
+                return MyToken(value: str, classType: "LEXICAL ERROR", lineNumber: lineNumber)
             }
         }
             // Logical Operators
@@ -166,7 +166,7 @@ class MyToken {
             return MyToken(value: str, classType: "Identifier", lineNumber: lineNumber)
         }
         
-        return MyToken(value: str, classType: "SYNTAX ERROR", lineNumber: lineNumber)
+        return MyToken(value: str, classType: "LEXICAL ERROR", lineNumber: lineNumber)
     }
     
     

@@ -79,7 +79,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             
             cellView.textField?.stringValue = self.myTokens[row].classType
             cellView.textField?.textColor = myGreenColor
-            if self.myTokens[row].classType == "SYNTAX ERROR" {
+            if self.myTokens[row].classType == "LEXICAL ERROR" {
                 cellView.textField?.textColor = NSColor.redColor()
             }
             else if self.myTokens[row].classType == "Identifier" {
@@ -93,7 +93,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             
             cellView.textField?.stringValue = self.myTokens[row].value
             cellView.textField?.textColor = myBlueColor
-            if self.myTokens[row].classType == "SYNTAX ERROR" {
+            if self.myTokens[row].classType == "LEXICAL ERROR" {
                 cellView.textField?.textColor = NSColor.redColor()
             }
 

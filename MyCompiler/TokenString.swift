@@ -73,6 +73,12 @@ class TokenString {
             else if temp.lastChar == "|" {
                 return true
             }
+            else if temp.lastChar == "<" {
+                return true
+            }
+            else if temp.lastChar == ">" {
+                return true
+            }
             return false
             
         case "a"..."z","A"..."Z":
@@ -95,6 +101,12 @@ class TokenString {
                 return true
             }
             else if temp.lastChar == "|" {
+                return true
+            }
+            else if temp.lastChar == "<" {
+                return true
+            }
+            else if temp.lastChar == ">" {
                 return true
             }
             else if temp.lastChar == "." {
@@ -167,6 +179,20 @@ class TokenString {
             else {
                 return true
             }
+        case "<" :
+            if  temp.lastChar == "<" {
+                return false
+            }
+            else {
+                return true
+            }
+        case ">" :
+            if  temp.lastChar == ">" {
+                return false
+            }
+            else {
+                return true
+            }
         case "*" :
             return true
             
@@ -206,7 +232,7 @@ class TokenString {
             
             // comment detected
             if char == "/"{
-                if temp.lastChar == "/" {
+                if temp.lastChar == "/" && !commentsFlag && !stringFlag{
                     commentsFlag = true
                     temp.removeAtIndex(temp.endIndex.predecessor())
                     if temp != "" {
@@ -249,7 +275,7 @@ class TokenString {
                     }
                     stringFlag = true
                     
-                }else{
+                }else if !(temp.lastChar == "\\"){
                     temp.append(char)
                     if temp != "" {
                         tokensString.append((temp,lineNumber.description))
@@ -300,6 +326,17 @@ class TokenString {
                 tokensString.append((String(char), lineNumber.description))
                 temp = ""
             }
+                // special case 5.5.t => 5.5 , . , t
+            else if (char >= "a" && char <= "z" || char >= "A" && char <= "Z") && temp.lastChar == "." {
+                temp.removeAtIndex(temp.endIndex.predecessor())
+                // if temp has any value
+                if temp != "" {
+                    tokensString.append((temp,lineNumber.description))
+                }
+                tokensString.append((".",lineNumber.description))
+                temp = ""
+                temp.append(char)
+            }
             else if wordBreaker(temp, char: char){
                 // if temp has any value
                 if temp != "" {
@@ -325,7 +362,6 @@ class TokenString {
             }else{
                 tokensString.append((temp,lineNumber.description))
             }
-            
         }
         
         return tokensString
