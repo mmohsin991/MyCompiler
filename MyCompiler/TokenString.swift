@@ -118,7 +118,7 @@ class TokenString {
             return false
             
         case "." :
-            if temp >= "0" && temp <= "9" {
+            if temp.lastChar >= "0" && temp.lastChar <= "9" {
                 return false
             }
             else {
