@@ -144,6 +144,12 @@ class TokenString {
             else if temp == "!" {
                 return false
             }
+            else if temp == ">" {
+                return false
+            }
+            else if temp == "<" {
+                return false
+            }
             else {
                 return true
             }
@@ -213,7 +219,7 @@ class TokenString {
     
     
     
-    class func generateTokens(code : String) -> [(String,String)]{
+    class func generateWords(code : String) -> [(String,String)]{
         
         var temp = ""
         // [value and lineNumber]

@@ -156,6 +156,10 @@ class MyToken {
         else if str == "&&" || str == "||" || str == "!"{
             return MyToken(value: str, classType: "Logical", lineNumber: lineNumber)
         }
+        else if isDataType(str){
+            return MyToken(value: str, classType: "DataType", lineNumber: lineNumber)
+        }
+            
             // key words
         else if isKeyWord(str){
             return MyToken(value: str, classType: "KeyWord", lineNumber: lineNumber)
@@ -169,6 +173,33 @@ class MyToken {
         return MyToken(value: str, classType: "LEXICAL ERROR", lineNumber: lineNumber)
     }
     
+    
+    
+    class func isDataType(value : String) -> Bool{
+        
+        switch value {
+            
+        case "STRING" :
+            return true
+        case "CHAR" :
+            return true
+        case "INT" :
+            return true
+        case "FLOAT" :
+            return true
+        case "BOOL" :
+            return true
+        case "AnyObject" :
+            return true
+            
+            
+            
+        default:
+            return false
+        }
+    
+    
+    }
     
     class func isKeyWord(value : String) -> Bool{
         
@@ -202,21 +233,7 @@ class MyToken {
             return true
         case "NIL" :
             return true
-        case "STRING" :
-            return true
-        case "CHAR" :
-            return true
-        case "INT" :
-            return true
-        case "FLOAT" :
-            return true            
-        case "AnyObject" :
-            return true
         case "RETURN" :
-            return true
-        case "true" :
-            return true
-        case "false" :
             return true
 
             

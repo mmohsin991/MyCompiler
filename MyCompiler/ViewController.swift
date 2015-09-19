@@ -162,13 +162,13 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         // clear tokens
         self.myTokens = []
         
-        var tokenStringArr = TokenString.generateTokens(self.txtView.string!)
+        var wordsArr = TokenString.generateWords(self.txtView.string!)
         
-        for tokenStr in tokenStringArr{
-            if tokenStr.0 != " "{
-                let myToken = MyToken.stringToMyToken(tokenStr.0, lineNumber: tokenStr.1)
+        for wordStr in wordsArr{
+            if wordStr.0 != " "{
+                let myToken = MyToken.stringToMyToken(wordStr.0, lineNumber: wordStr.1)
                 self.myTokens.append(myToken)
-                println(tokenStr)
+                println(wordStr)
             }
         }
         for token in self.myTokens{
