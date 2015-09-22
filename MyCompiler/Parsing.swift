@@ -74,7 +74,7 @@ class Parsing{
         if char == "\"" || char == "“" || char == "”"{
             return transitionTable[state][0]
         }
-            // all types of " characters
+            // \ character
         else if char == "\\" {
                 return transitionTable[state][1]
             }
@@ -161,6 +161,7 @@ class Parsing{
     class func doParsing(value: String , pasringType : ParsingTypes) -> Bool{
 
         switch pasringType{
+            
         case .CharConstatnt:
             return DFAParsing(value, trasitionFunction: charConstatnt, finalStates: [2,3])
         case .IntConstatnt:

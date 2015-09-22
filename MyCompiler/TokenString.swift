@@ -45,9 +45,11 @@ class TokenString {
         }
         
     }
+    // MARK: wordBreaker function
     
     // return it will break the word(string) or not
     private class func wordBreaker(temp : String ,char : Character) -> Bool {
+        
         
         switch char{
             
@@ -117,13 +119,7 @@ class TokenString {
             }
             return false
             
-        case "." :
-            if temp.lastChar >= "0" && temp.lastChar <= "9" {
-                return false
-            }
-            else {
-                return true
-            }
+
             
         case "=" :
             if temp == "=" {
@@ -218,7 +214,6 @@ class TokenString {
     }
     
     
-    
     class func generateWords(code : String) -> [(String,String)]{
         
         var temp = ""
@@ -234,7 +229,6 @@ class TokenString {
         
         
         for char in code {
-            
             
             // comment detected
             if char == "/"{
@@ -343,6 +337,33 @@ class TokenString {
                 temp = ""
                 temp.append(char)
             }
+                
+                // special case : dfDd.232.3 == dfDd , . , 232.3
+            else if char == "." {
+                if Parsing.doParsing(temp, pasringType: ParsingTypes.MyIdentifier){
+                    tokensString.append((temp,lineNumber.description))
+                    tokensString.append((".",lineNumber.description))
+                    temp = ""
+                    
+                }
+                else if temp.lastChar >= "0" && temp.lastChar <= "9" {
+                    if char != " "{
+                        temp.append(char)
+                    }
+                }
+                
+                else {
+                    if temp != "" {
+                        tokensString.append((temp,lineNumber.description))
+                    }
+                    temp = ""
+                    if char != " "{
+                        temp.append(char)
+                    }
+                }
+            }
+
+            
             else if wordBreaker(temp, char: char){
                 // if temp has any value
                 if temp != "" {
