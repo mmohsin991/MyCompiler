@@ -72,16 +72,16 @@ class MyToken {
             var str1 = str
             str1.removeAtIndex(str1.startIndex)
             str1.removeAtIndex(str1.endIndex.predecessor())
-            return MyToken(value: str1, classType: "String Constant", lineNumber: lineNumber)
+            return MyToken(value: str1, classType: "StringConstant", lineNumber: lineNumber)
         }
             // for Int contant
         else if Parsing.doParsing(str, pasringType: ParsingTypes.IntConstatnt) {
-            return MyToken(value: str, classType: "Int Constant", lineNumber: lineNumber)
+            return MyToken(value: str, classType: "IntConstant", lineNumber: lineNumber)
             
         }
             // for Bool contant
         else if Parsing.doParsing(str, pasringType: ParsingTypes.BoolConstatnt) {
-            return MyToken(value: str, classType: "Bool Constant", lineNumber: lineNumber)
+            return MyToken(value: str, classType: "BoolConstant", lineNumber: lineNumber)
             
         }
             

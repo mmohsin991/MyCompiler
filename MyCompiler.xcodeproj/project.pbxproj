@@ -11,7 +11,13 @@
 		42726AA21B9C369D0058888F /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42726AA11B9C369D0058888F /* Parsing.swift */; };
 		42726AA41B9C36B40058888F /* TokenString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42726AA31B9C36B40058888F /* TokenString.swift */; };
 		42726AA61B9C36C60058888F /* MyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42726AA51B9C36C60058888F /* MyToken.swift */; };
+		42A0A8BD1C0465BD005B8C00 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0A8BC1C0465BD005B8C00 /* Body.swift */; };
+		42A0A8BF1C0466AC005B8C00 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0A8BE1C0466AC005B8C00 /* Const.swift */; };
+		42A0A8C11C0466B6005B8C00 /* ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0A8C01C0466B6005B8C00 /* ID.swift */; };
+		42A0A8C31C0466C0005B8C00 /* Exp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0A8C21C0466C0005B8C00 /* Exp.swift */; };
 		42B20ABE1B9CBFA40042779F /* Blue_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B20ABD1B9CBFA40042779F /* Blue_dot.png */; };
+		42B310D61C03A86B0093CB90 /* VarDec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B310D51C03A86B0093CB90 /* VarDec.swift */; };
+		42B310D81C03A8C50093CB90 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B310D71C03A8C50093CB90 /* Constants.swift */; };
 		42FAC8401B90984000C2E75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAC83F1B90984000C2E75B /* AppDelegate.swift */; };
 		42FAC8421B90984000C2E75B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAC8411B90984000C2E75B /* ViewController.swift */; };
 		42FAC8451B90984000C2E75B /* MyCompiler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42FAC8431B90984000C2E75B /* MyCompiler.xcdatamodeld */; };
@@ -35,7 +41,13 @@
 		42726AA11B9C369D0058888F /* Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
 		42726AA31B9C36B40058888F /* TokenString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenString.swift; sourceTree = "<group>"; };
 		42726AA51B9C36C60058888F /* MyToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyToken.swift; sourceTree = "<group>"; };
+		42A0A8BC1C0465BD005B8C00 /* Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
+		42A0A8BE1C0466AC005B8C00 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		42A0A8C01C0466B6005B8C00 /* ID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID.swift; sourceTree = "<group>"; };
+		42A0A8C21C0466C0005B8C00 /* Exp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exp.swift; sourceTree = "<group>"; };
 		42B20ABD1B9CBFA40042779F /* Blue_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue_dot.png; sourceTree = "<group>"; };
+		42B310D51C03A86B0093CB90 /* VarDec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VarDec.swift; sourceTree = "<group>"; };
+		42B310D71C03A8C50093CB90 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		42FAC83A1B90984000C2E75B /* MyCompiler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCompiler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FAC83E1B90984000C2E75B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42FAC83F1B90984000C2E75B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +90,19 @@
 			name = MyClasses;
 			sourceTree = "<group>";
 		};
+		42B310D41C03A83D0093CB90 /* CFGs */ = {
+			isa = PBXGroup;
+			children = (
+				42A0A8BC1C0465BD005B8C00 /* Body.swift */,
+				42A0A8BE1C0466AC005B8C00 /* Const.swift */,
+				42A0A8C01C0466B6005B8C00 /* ID.swift */,
+				42A0A8C21C0466C0005B8C00 /* Exp.swift */,
+				42B310D51C03A86B0093CB90 /* VarDec.swift */,
+				42B310D71C03A8C50093CB90 /* Constants.swift */,
+			);
+			name = CFGs;
+			sourceTree = "<group>";
+		};
 		42FAC8311B90983F00C2E75B = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +124,7 @@
 		42FAC83C1B90984000C2E75B /* MyCompiler */ = {
 			isa = PBXGroup;
 			children = (
+				42B310D41C03A83D0093CB90 /* CFGs */,
 				42726AA01B9C366F0058888F /* MyClasses */,
 				42FAC83F1B90984000C2E75B /* AppDelegate.swift */,
 				42FAC8411B90984000C2E75B /* ViewController.swift */,
@@ -179,6 +205,7 @@
 		42FAC8321B90983F00C2E75B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Mohsin;
 				TargetAttributes = {
@@ -236,12 +263,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				42726AA61B9C36C60058888F /* MyToken.swift in Sources */,
+				42A0A8C31C0466C0005B8C00 /* Exp.swift in Sources */,
 				421C9EF31B9DA28F006B48B9 /* Miscellaneous.swift in Sources */,
 				42FAC8421B90984000C2E75B /* ViewController.swift in Sources */,
 				42FAC8451B90984000C2E75B /* MyCompiler.xcdatamodeld in Sources */,
+				42B310D61C03A86B0093CB90 /* VarDec.swift in Sources */,
 				42726AA21B9C369D0058888F /* Parsing.swift in Sources */,
 				42726AA41B9C36B40058888F /* TokenString.swift in Sources */,
 				42FAC8401B90984000C2E75B /* AppDelegate.swift in Sources */,
+				42A0A8C11C0466B6005B8C00 /* ID.swift in Sources */,
+				42B310D81C03A8C50093CB90 /* Constants.swift in Sources */,
+				42A0A8BD1C0465BD005B8C00 /* Body.swift in Sources */,
+				42A0A8BF1C0466AC005B8C00 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
