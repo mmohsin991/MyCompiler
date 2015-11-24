@@ -28,12 +28,12 @@ class VarDec{
     
     class func SecVarDec(className : String) -> Bool{
         
-        return className == "Var"
+        return className == "VAR"
     }
     
     class func SecInit(className : String) -> Bool{
         
-        return className == "=" || Body.SecSST(className)
+        return className == "AssignmentOP" || Body.SecSST(className)
     }
     
     class func SecInit_(className : String) -> Bool{

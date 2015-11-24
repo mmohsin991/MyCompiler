@@ -159,11 +159,19 @@ class MyToken {
         else if isDataType(str){
             return MyToken(value: str, classType: "DataType", lineNumber: lineNumber)
         }
+        else if str == "VOID" {
+            return MyToken(value: str, classType: "VOID", lineNumber: lineNumber)
+        }
+        else if str == "ARRAY"{
+            return MyToken(value: str, classType: "ARRAY", lineNumber: lineNumber)
+        }
+            
             
             // key words
         else if isKeyWord(str){
-            return MyToken(value: str, classType: "KeyWord", lineNumber: lineNumber)
+            return MyToken(value: str, classType: str, lineNumber: lineNumber)
         }
+         
             
             // Identifier constant
         else if Parsing.doParsing(str, pasringType: ParsingTypes.MyIdentifier) {
@@ -201,6 +209,10 @@ class MyToken {
     
     }
     
+    
+    
+
+    
     class func isKeyWord(value : String) -> Bool{
         
         switch value {
@@ -235,8 +247,12 @@ class MyToken {
             return true
         case "RETURN" :
             return true
-
-            
+        case "INCBY" :
+            return true
+        case "DECBY" :
+            return true
+        case "DO" :
+            return true
             
             
             

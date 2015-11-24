@@ -27,17 +27,37 @@ class Exp{
     
     class func SecExp(className : String) -> Bool{
         
-        return ID.SecID(className) || Const.SecConst(className)
+        return ID_Const.SecID_Const(className)
     }
     
     
-    class func SecExp_(className : String) -> Bool{
+    class func SecE_(className : String) -> Bool{
         
         return  className == "+" || className == "-" || className == "$"
     }
     
-    class func SecMST(className : String) -> Bool{
+    class func SecT(className : String) -> Bool{
         
-        return className == "="
+        return ID_Const.SecID_Const(className)
+    }
+    
+    class func SecT_(className : String) -> Bool{
+        
+        return  className == "*" || className == "/" || className == "%" || className == "+" || className == "-" ||  className == "$"
+    }
+    
+    class func SecF(className : String) -> Bool{
+        
+        return ID_Const.SecID_Const(className)
+    }
+    
+    class func SecPM(className : String) -> Bool{
+        
+        return  className == "+" || className == "-"
+    }
+    
+    class func SecMDM(className : String) -> Bool{
+        
+        return  className == "*" || className == "/" || className == "%"
     }
 }
