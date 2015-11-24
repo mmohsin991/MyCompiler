@@ -32,10 +32,17 @@ class IF{
     }
     
     class func SecElse(className : String) -> Bool{
-        return className == "ELSE" || className == "$"
+        return className == "ELSE" || Follow(className)
     }
     
     class func SecIf_(className : String) -> Bool{
         return className == "IF" || className == "{"
     }
+
+
+    class func Follow(className : String) -> Bool{
+        
+        return className == "$"
+    }
+
 }

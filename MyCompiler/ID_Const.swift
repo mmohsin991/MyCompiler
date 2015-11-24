@@ -15,6 +15,12 @@ class ID_Const{
     // CFGs
     class func ID_Const()->Bool{
         
+        if ID.ID() {
+            return true
+        }
+        else if Const.Const() {
+            return true
+        }
         
         return false
     }

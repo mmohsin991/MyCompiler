@@ -48,7 +48,7 @@ class ArrDec{
     
     class func SecInit__(className : String) -> Bool{
         
-        return className == "[" || className == "$"
+        return className == "[" || Follow(className)
     }
  
     class func SecInit___(className : String) -> Bool{
@@ -70,4 +70,12 @@ class ArrDec{
         
         return Const.SecConst(className) || className == "]"
     }
+    
+    
+    class func Follow(className : String) -> Bool{
+        
+        return className == "$"
+    }
+    
+    
 }

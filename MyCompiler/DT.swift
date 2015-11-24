@@ -14,10 +14,40 @@ class DT{
     
     // CFGs
     class func DT()->Bool{
+        if globleTokens[globleIndex].classType == "ARRAY" {
+            globleIndex++
+            if globleTokens[globleIndex].value == "<" {
+                globleIndex++
+                if DT_(){
+                    if globleTokens[globleIndex].value == ">" {
+                        globleIndex++
+                        return true
+                    }
+                }
+            }
+        }
+        else if globleTokens[globleIndex].classType == "VOID"{
+            globleIndex++
+            return true
+        }
+        else if DT_(){
+            return true
+        }
         
         return false
     }
 
+    
+    class func DT_()->Bool{
+        if globleTokens[globleIndex].classType == "DataType" {
+            globleIndex++
+            return true
+        }
+        
+        return false
+    }
+    
+    
     
     
     //Selection Sets

@@ -12,8 +12,13 @@ import Foundation
 class Const{
     
     // CFGs
-    class func VarDec()->Bool{
+    class func Const()->Bool{
         
+        if SecConst(globleTokens[globleIndex].classType){
+            globleIndex++
+            return true
+
+        }
         
         return false
     }

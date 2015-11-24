@@ -12,16 +12,95 @@ import Foundation
 class Exp{
     
     // CFGs
-    class func VarDec()->Bool{
+    class func Exp()->Bool{
+        
+        if T(){
+            if E_(){
+                return true
+            }
+        }
         
         
         return false
     }
     
     
+    class func T()->Bool{
+        
+        if F(){
+            if T_(){
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    class func T_()->Bool{
+        
+        if MDM() {
+            if F() {
+                if T_(){
+                    return true
+                }
+            }
+        }
+        else if globleTokens[globleIndex].classType == "+" ||  globleTokens[globleIndex].classType == "-" || Follow(globleTokens[globleIndex].classType){
+            return true
+        }
+        
+        
+        return false
+    }
+    
+    class func E_()->Bool{
+        
+        if PM(){
+            if T(){
+                if E_(){
+                    return true
+                }
+            }
+        }
+        else if Follow(globleTokens[globleIndex].classType){
+            return true
+        }
+        
+        
+        return false
+    }
+    
+    class func F()->Bool{
+        
+        if ID_Const.ID_Const() {
+            return true
+        }
+        
+        return false
+    }
     
     
+    class func PM()->Bool{
+        
+        if globleTokens[globleIndex].classType == "+" || globleTokens[globleIndex].classType == "-"{
+            globleIndex++
+            return true
+        
+        }
+        
+        return false
+    }
     
+    class func MDM()->Bool{
+        
+        if globleTokens[globleIndex].classType == "*" || globleTokens[globleIndex].classType == "/" || globleTokens[globleIndex].classType == "%"{
+            globleIndex++
+            return true
+            
+        }
+        
+        return false
+    }
     
     //Selection Sets
     
@@ -33,7 +112,7 @@ class Exp{
     
     class func SecE_(className : String) -> Bool{
         
-        return  className == "+" || className == "-" || className == "$"
+        return  className == "+" || className == "-" || Follow(className)
     }
     
     class func SecT(className : String) -> Bool{
@@ -43,7 +122,7 @@ class Exp{
     
     class func SecT_(className : String) -> Bool{
         
-        return  className == "*" || className == "/" || className == "%" || className == "+" || className == "-" ||  className == "$"
+        return  className == "*" || className == "/" || className == "%" || className == "+" || className == "-" ||  Follow(className)
     }
     
     class func SecF(className : String) -> Bool{
@@ -60,4 +139,13 @@ class Exp{
         
         return  className == "*" || className == "/" || className == "%"
     }
+    
+    
+    // replace with "$"
+    class func Follow(className : String) -> Bool{
+        
+        return  className == "$"
+    }
+    
+    
 }

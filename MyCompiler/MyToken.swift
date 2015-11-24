@@ -130,7 +130,7 @@ class MyToken {
             // for INC/DEC and Arthmatic Operators
         else if str[str.startIndex] == "+"||str[str.startIndex] == "-"{
             if count(str) == 1 {
-                return MyToken(value: str, classType: "ArthOP", lineNumber: lineNumber)
+                return MyToken(value: str, classType: String(str[str.startIndex]), lineNumber: lineNumber)
             }
             else if count(str) == 2 && str[str.startIndex] == "+" && str[str.endIndex.predecessor()] == "+"{
                 return MyToken(value: str, classType: "INC/DEC", lineNumber: lineNumber)
@@ -146,7 +146,7 @@ class MyToken {
             // Arthmitaic Operators
         else if str[str.startIndex] == "*"||str[str.startIndex] == "/"||str[str.startIndex] == "%"{
             if count(str) == 1 {
-                return MyToken(value: str, classType: "ArthOp", lineNumber: lineNumber)
+                return MyToken(value: str, classType: String(str[str.startIndex]), lineNumber: lineNumber)
             }
             else{
                 return MyToken(value: str, classType: "LEXICAL ERROR", lineNumber: lineNumber)
@@ -253,7 +253,16 @@ class MyToken {
             return true
         case "DO" :
             return true
-            
+        case "FUNC" :
+            return true
+        case "SWITCH" :
+            return true
+        case "CASE" :
+            return true
+        case "DEFAULT" :
+            return true
+        case "GOTHROUGH" :
+            return true
             
             
         default:

@@ -35,7 +35,12 @@ class Cond{
     
     class func SecCond_(className : String) -> Bool{
         // first(logica)
-        return className == "Logical" || className == "$"
+        return className == "Logical" || Follow(className)
+    }
+    
+    class func Follow(className : String) -> Bool{
+        
+        return className == "$"
     }
     
 }

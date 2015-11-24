@@ -22,6 +22,9 @@
 		4277CAAD1C04A5AC00A10F13 /* ForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277CAAC1C04A5AC00A10F13 /* ForEach.swift */; };
 		4277CAAF1C04A64F00A10F13 /* While.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277CAAE1C04A64F00A10F13 /* While.swift */; };
 		4277CAB11C04A6B200A10F13 /* DoWhile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277CAB01C04A6B200A10F13 /* DoWhile.swift */; };
+		4277CAB31C04A95100A10F13 /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277CAB21C04A95100A10F13 /* Func.swift */; };
+		4277CAB51C04AAA100A10F13 /* FuncCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277CAB41C04AAA100A10F13 /* FuncCall.swift */; };
+		4277CAB71C04AAF200A10F13 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277CAB61C04AAF200A10F13 /* Switch.swift */; };
 		42A0A8BD1C0465BD005B8C00 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0A8BC1C0465BD005B8C00 /* Body.swift */; };
 		42A0A8BF1C0466AC005B8C00 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0A8BE1C0466AC005B8C00 /* Const.swift */; };
 		42A0A8C11C0466B6005B8C00 /* ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A0A8C01C0466B6005B8C00 /* ID.swift */; };
@@ -64,6 +67,9 @@
 		4277CAAC1C04A5AC00A10F13 /* ForEach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForEach.swift; sourceTree = "<group>"; };
 		4277CAAE1C04A64F00A10F13 /* While.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = While.swift; sourceTree = "<group>"; };
 		4277CAB01C04A6B200A10F13 /* DoWhile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoWhile.swift; sourceTree = "<group>"; };
+		4277CAB21C04A95100A10F13 /* Func.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
+		4277CAB41C04AAA100A10F13 /* FuncCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuncCall.swift; sourceTree = "<group>"; };
+		4277CAB61C04AAF200A10F13 /* Switch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
 		42A0A8BC1C0465BD005B8C00 /* Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
 		42A0A8BE1C0466AC005B8C00 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		42A0A8C01C0466B6005B8C00 /* ID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID.swift; sourceTree = "<group>"; };
@@ -117,24 +123,26 @@
 		42B310D41C03A83D0093CB90 /* CFGs */ = {
 			isa = PBXGroup;
 			children = (
-				42A0A8BC1C0465BD005B8C00 /* Body.swift */,
-				42A0A8C41C046B43005B8C00 /* ID_Const.swift */,
-				42A0A8C01C0466B6005B8C00 /* ID.swift */,
-				42A0A8BE1C0466AC005B8C00 /* Const.swift */,
-				4277CA9E1C04941900A10F13 /* DT.swift */,
-				4277CAA01C049AFF00A10F13 /* IncDec.swift */,
-				4277CAA21C049CB000A10F13 /* Cond.swift */,
-				4277CAA41C049E0000A10F13 /* Assign.swift */,
-				42A0A8C21C0466C0005B8C00 /* Exp.swift */,
-				4277CA9C1C04931700A10F13 /* ROP.swift */,
-				42B310D51C03A86B0093CB90 /* VarDec.swift */,
 				4277CAA61C049F8100A10F13 /* ArrDec.swift */,
-				4277CAA81C04A36500A10F13 /* IF.swift */,
+				4277CAA41C049E0000A10F13 /* Assign.swift */,
+				42A0A8BC1C0465BD005B8C00 /* Body.swift */,
+				4277CAA21C049CB000A10F13 /* Cond.swift */,
+				42A0A8BE1C0466AC005B8C00 /* Const.swift */,
+				4277CAB01C04A6B200A10F13 /* DoWhile.swift */,
+				4277CA9E1C04941900A10F13 /* DT.swift */,
+				42A0A8C21C0466C0005B8C00 /* Exp.swift */,
 				4277CAAA1C04A4A200A10F13 /* For.swift */,
 				4277CAAC1C04A5AC00A10F13 /* ForEach.swift */,
+				4277CAB21C04A95100A10F13 /* Func.swift */,
+				4277CAB41C04AAA100A10F13 /* FuncCall.swift */,
+				42A0A8C41C046B43005B8C00 /* ID_Const.swift */,
+				42A0A8C01C0466B6005B8C00 /* ID.swift */,
+				4277CAA81C04A36500A10F13 /* IF.swift */,
+				4277CAA01C049AFF00A10F13 /* IncDec.swift */,
+				4277CA9C1C04931700A10F13 /* ROP.swift */,
+				4277CAB61C04AAF200A10F13 /* Switch.swift */,
+				42B310D51C03A86B0093CB90 /* VarDec.swift */,
 				4277CAAE1C04A64F00A10F13 /* While.swift */,
-				4277CAB01C04A6B200A10F13 /* DoWhile.swift */,
-				42B310D71C03A8C50093CB90 /* Constants.swift */,
 			);
 			name = CFGs;
 			sourceTree = "<group>";
@@ -160,6 +168,7 @@
 		42FAC83C1B90984000C2E75B /* MyCompiler */ = {
 			isa = PBXGroup;
 			children = (
+				42B310D71C03A8C50093CB90 /* Constants.swift */,
 				42B310D41C03A83D0093CB90 /* CFGs */,
 				42726AA01B9C366F0058888F /* MyClasses */,
 				42FAC83F1B90984000C2E75B /* AppDelegate.swift */,
@@ -311,15 +320,18 @@
 				4277CAA91C04A36500A10F13 /* IF.swift in Sources */,
 				42726AA21B9C369D0058888F /* Parsing.swift in Sources */,
 				42726AA41B9C36B40058888F /* TokenString.swift in Sources */,
+				4277CAB71C04AAF200A10F13 /* Switch.swift in Sources */,
 				42FAC8401B90984000C2E75B /* AppDelegate.swift in Sources */,
 				4277CAA31C049CB000A10F13 /* Cond.swift in Sources */,
 				42A0A8C11C0466B6005B8C00 /* ID.swift in Sources */,
 				4277CAAF1C04A64F00A10F13 /* While.swift in Sources */,
+				4277CAB31C04A95100A10F13 /* Func.swift in Sources */,
 				42B310D81C03A8C50093CB90 /* Constants.swift in Sources */,
 				4277CAAB1C04A4A200A10F13 /* For.swift in Sources */,
 				4277CA9F1C04941900A10F13 /* DT.swift in Sources */,
 				4277CAA11C049AFF00A10F13 /* IncDec.swift in Sources */,
 				42A0A8BD1C0465BD005B8C00 /* Body.swift in Sources */,
+				4277CAB51C04AAA100A10F13 /* FuncCall.swift in Sources */,
 				42A0A8C51C046B43005B8C00 /* ID_Const.swift in Sources */,
 				42A0A8BF1C0466AC005B8C00 /* Const.swift in Sources */,
 				4277CA9D1C04931700A10F13 /* ROP.swift in Sources */,

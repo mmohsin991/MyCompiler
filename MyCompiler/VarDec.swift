@@ -15,13 +15,54 @@ class VarDec{
     // CFGs
     class func VarDec()->Bool{
         
+        if globleTokens[globleIndex].classType == "VAR" {
+            globleIndex++
+            if ID.SecID(globleTokens[globleIndex].classType){
+                globleIndex++
+                if globleTokens[globleIndex].classType == ":" {
+                    globleIndex++
+                    if DT.DT(){
+                        if Init(){
+                            return true
+                        }
+                    }
+                }
+            }
+        }
+        
+        
         
         return false
     }
     
     
+    class func Init()->Bool{
+        
+        if globleTokens[globleIndex].classType == "AssignmentOP" {
+            globleIndex++
+            if Init_(){
+                return true
+            }
+           
+        }
+        else if SecInit(globleTokens[globleIndex].classType)  {
+            return true
+        }
+        
+        
+        
+        return false
+    }
     
-    
+    class func Init_()->Bool{
+        
+        if Const.Const() || ID.ID() || Exp.Exp(){
+            return true
+        }
+        
+        
+        return false
+    }
     
     
     //Selection Sets

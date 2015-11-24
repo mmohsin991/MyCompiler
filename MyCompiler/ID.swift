@@ -12,13 +12,38 @@ import Foundation
 class ID{
     
     // CFGs
-    class func VarDec()->Bool{
+    class func ID()->Bool{
         
+        if SecID( globleTokens[globleIndex].classType){
+            globleIndex++
+            if ID_(){
+                return true
+            }
+        }
         
         return false
     }
     
     
+    class func ID_()->Bool{
+        
+        if globleTokens[globleIndex].classType == "["{
+            globleIndex++
+            if ID_Const.ID_Const(){
+                if globleTokens[globleIndex].classType == "]"{
+                    globleIndex++
+                    if ID_(){
+                        return true
+                    }
+                }
+            }
+        }
+        else if Follow(globleTokens[globleIndex].classType){
+            return true
+        }
+        
+        return false
+    }
     
     
     
@@ -29,6 +54,11 @@ class ID{
         
         return className == "Identifier"
     }
-
+    
+    
+    class func Follow(className : String) -> Bool{
+        
+        return className == "$"
+    }
     
 }
