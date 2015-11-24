@@ -15,12 +15,73 @@ class Body{
     // CFGs
     class func Body()->Bool{
         
+        if SST(){
+            if MST(){
+                return true
+            }
+        }
         
         return false
     }
     
     
+    class func MST()->Bool{
+        if SST(){
+            if MST(){
+                return true
+            }
+        }
+            // follwo of body = "$$$" (End of File)
+        else if globleTokens[globleIndex].value == "$$$" {
+            globleIndex++
+            return true
+        }
+        
+        return false
+    }
     
+    class func SST()->Bool{
+        
+        if IF.If(){
+            return true
+        }
+        else if Switch.Switch(){
+            return true
+        }
+        else if For.For(){
+            return true
+        }
+        else if ForEach.ForEach(){
+            return true
+        }
+        else if VarDec.VarDec(){
+            return true
+        }
+        else if ArrDec.ArrDec(){
+            return true
+        }
+        else if While.While(){
+            return true
+        }
+        else if DoWhile.DoWhile(){
+            return true
+        }
+        else if IncDec.IncDec(){
+            return true
+        }
+        else if Assign.Assign(){
+            return true
+        }
+        else if Func.Func(){
+            return true
+        }
+        else if FuncCall.FuncCall(){
+            return true
+        }
+        
+        
+        return false
+    }
     
     
     

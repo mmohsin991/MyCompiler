@@ -175,6 +175,22 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             token.decs()
         }
         
+        
+        
+        // Syntax analyzer
+        
+        globleTokens = self.myTokens
+        globleIndex = 0
+        
+        if Body.Body() {
+            print("Syntax Passed")
+        }
+        else{
+            print("Syntax Failed")
+        }
+        
+        
+        
         self.tableView.reloadData()
     }
 }
