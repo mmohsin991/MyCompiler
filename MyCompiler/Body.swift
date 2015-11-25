@@ -100,8 +100,7 @@ class Body{
             Switch.SecSwitch(className) ||
             For.SecFor(className) ||
             ForEach.SecForEach(className) ||
-            VarDec.SecVarDec(className) ||
-            ArrDec.SecArrDec(className) ||
+            VarArrDec.SecVarArrDec(className) ||
             While.SecWhile(className) ||
             DoWhile.SecDoWhile(className) ||
             IncDec.SecIncDec(className) ||

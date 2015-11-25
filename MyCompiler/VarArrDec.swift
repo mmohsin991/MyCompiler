@@ -54,12 +54,12 @@ class VarArrDec{
     
     //Selection Sets
     
-    class func SecVarDec(className : String) -> Bool{
+    class func SecVarArrDec(className : String) -> Bool{
         
-        return className == "AssignmentOP"
+        return className == "VAR"
     }
     
-    class func SecVarDec_(className : String) -> Bool{
+    class func SecVarArrDec_(className : String) -> Bool{
         
         return VarDec.SecVarDec(className) || ArrDec.SecArrDec(className)
     }
