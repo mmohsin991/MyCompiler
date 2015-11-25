@@ -31,4 +31,10 @@ class ROP{
     }
     
     
+    class func Follow(className : String) -> Bool{
+        //Cond
+        return ID_Const.SecID_Const(className)
+    }
+    
+    
 }

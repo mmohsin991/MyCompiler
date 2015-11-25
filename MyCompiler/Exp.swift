@@ -141,10 +141,9 @@ class Exp{
     }
     
     
-    // replace with "$"
     class func Follow(className : String) -> Bool{
-        
-        return  className == "$"
+        // Assign
+        return  Assign.Follow(className)
     }
     
     

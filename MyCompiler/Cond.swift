@@ -39,8 +39,8 @@ class Cond{
     }
     
     class func Follow(className : String) -> Bool{
-        
-        return className == "$"
+        // IF, While, Do While
+        return className == ")"
     }
     
 }

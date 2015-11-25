@@ -74,11 +74,19 @@ class VarDec{
     
     class func SecInit(className : String) -> Bool{
         
-        return className == "AssignmentOP" || Body.SecSST(className)
+        return className == "AssignmentOP" || Follow(className)
     }
     
     class func SecInit_(className : String) -> Bool{
         
         return Const.SecConst(className) || ID.SecID(className) || Exp.SecExp(className)
     }
+    
+    
+    class func Follow(className : String) -> Bool{
+        
+        return Body.SecMST(className)
+    }
+    
+    
 }

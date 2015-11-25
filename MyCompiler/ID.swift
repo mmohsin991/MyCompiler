@@ -57,8 +57,8 @@ class ID{
     
     
     class func Follow(className : String) -> Bool{
-        
-        return className == "$"
+        // Assign, IncDec, ID_Const, VarDec, ID_Const, ForEach
+        return className == "AssignmentOP" || className == "]" || VarDec.Follow(className) || ArrDec.Follow(className) || ID_Const.Follow(className) || className == "{"
     }
     
 }

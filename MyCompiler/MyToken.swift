@@ -178,6 +178,11 @@ class MyToken {
             return MyToken(value: str, classType: "Identifier", lineNumber: lineNumber)
         }
         
+            // End Of File
+        else if str == "$$$" {
+            return MyToken(value: str, classType: "End Of File", lineNumber: lineNumber)
+        }
+        
         return MyToken(value: str, classType: "LEXICAL ERROR", lineNumber: lineNumber)
     }
     
@@ -263,7 +268,10 @@ class MyToken {
             return true
         case "GOTHROUGH" :
             return true
-            
+        case "TO" :
+            return true
+        case "IN" :
+            return true
             
         default:
             return false

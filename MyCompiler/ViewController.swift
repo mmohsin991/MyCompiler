@@ -21,6 +21,9 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var btnRun: NSButton!
     
+
+    @IBOutlet weak var lblSyntaxMessage: NSTextFieldCell!
+    
     
     var filePath : String?
     var str = "void Main() a++===5.5+=**/= { \n int a = 10 \n float sAA = 1.3 \n }"
@@ -183,10 +186,16 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         globleIndex = 0
         
         if Body.Body() {
+            self.lblSyntaxMessage.textColor = myGreenColor
+            self.lblSyntaxMessage.title = "Syntax Passed"
             print("Syntax Passed")
         }
         else{
+            self.lblSyntaxMessage.textColor = NSColor.redColor()
+            self.lblSyntaxMessage.title = " Syntax Failed \n Line # \(globleTokens[globleIndex].lineNumber)"
+
             print("Syntax Failed")
+            print("\nLine # \(globleTokens[globleIndex].lineNumber)")
         }
         
         

@@ -33,4 +33,10 @@ class Assign{
         return Const.SecConst(className) ||  Exp.SecExp(className)
     }
     
+    
+    
+    class func Follow(className : String) -> Bool{
+        // 
+        return Body.SecMST(className)
+    }
 }

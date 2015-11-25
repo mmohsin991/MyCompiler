@@ -31,8 +31,8 @@ class Body{
                 return true
             }
         }
-            // follwo of body = "$$$" (End of File)
-        else if globleTokens[globleIndex].value == "$$$" {
+            // follow of body = "$$$" (End of File)
+        else if globleTokens[globleIndex].value == "}" || globleTokens[globleIndex].value == "$$$"{
             globleIndex++
             return true
         }
@@ -94,7 +94,7 @@ class Body{
     
     class func SecMST(className : String) -> Bool{
         
-        return SecSST(className) || className == "}"
+        return SecSST(className) || className == "}" || className == "$$$"
     }
     
     class func SecSST(className : String) -> Bool{

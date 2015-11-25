@@ -42,7 +42,7 @@ class IF{
 
     class func Follow(className : String) -> Bool{
         
-        return className == "$"
+        return Body.SecMST(className)
     }
 
 }
