@@ -14,6 +14,8 @@ class FuncCall{
     
     // CFGs
     class func FuncCall()->Bool{
+        let tempIndex = globleIndex
+
         if globleTokens[globleIndex].classType == "Identifier"{
             globleIndex++
             if globleTokens[globleIndex].classType == "("{
@@ -27,6 +29,7 @@ class FuncCall{
             }
         }
         
+        globleIndex = tempIndex
         return false
     }
     

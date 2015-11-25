@@ -13,15 +13,15 @@ class IncDec{
     
     // CFGs
     class func IncDec()->Bool{
-        
+        let tempIndex = globleIndex
+
         if ID_Arr() {
             if IncDec_(){
                 return true
             }
         }
         
-        
-        
+        globleIndex = tempIndex
         return false
     }
     

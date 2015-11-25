@@ -15,6 +15,9 @@ class ID_Const{
     // CFGs
     class func ID_Const()->Bool{
         
+        let tempIndex = globleIndex
+
+        
         if ID.ID() {
             return true
         }
@@ -22,6 +25,7 @@ class ID_Const{
             return true
         }
         
+        globleIndex = tempIndex
         return false
     }
     

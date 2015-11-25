@@ -14,13 +14,15 @@ class Exp{
     // CFGs
     class func Exp()->Bool{
         
+        let tempIndex = globleIndex
+
         if T(){
             if E_(){
                 return true
             }
         }
         
-        
+        globleIndex = tempIndex
         return false
     }
     

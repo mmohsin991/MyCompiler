@@ -14,6 +14,8 @@ class Assign{
     // CFGs
     class func Assign()->Bool{
         
+        let tempIndex = globleIndex
+        
         if ID.ID() {
             if globleTokens[globleIndex].classType == "AssignmentOP" {
                 globleIndex++
@@ -23,6 +25,7 @@ class Assign{
             }
         }
         
+        globleIndex = tempIndex
         return false
     }
     

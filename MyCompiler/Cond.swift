@@ -15,7 +15,8 @@ class Cond{
     // CFGs
     class func Cond()->Bool{
         
-        
+        let tempIndex = globleIndex
+
         if ID_Const.ID_Const() {
             if ROP.ROP() {
                 if ID_Const.ID_Const() {
@@ -26,6 +27,7 @@ class Cond{
             }
         }
         
+        globleIndex = tempIndex
 
         return false
     }
