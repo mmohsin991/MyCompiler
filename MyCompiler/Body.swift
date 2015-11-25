@@ -45,7 +45,16 @@ class Body{
         if IF.If(){
             return true
         }
+        else if Assign.Assign(){
+            return true
+        }
         else if Switch.Switch(){
+            return true
+        }
+        else if Func.Func(){
+            return true
+        }
+        else if FuncCall.FuncCall(){
             return true
         }
         else if For.For(){
@@ -64,15 +73,6 @@ class Body{
             return true
         }
         else if IncDec.IncDec(){
-            return true
-        }
-        else if Assign.Assign(){
-            return true
-        }
-        else if Func.Func(){
-            return true
-        }
-        else if FuncCall.FuncCall(){
             return true
         }
         else if Return.Return(){

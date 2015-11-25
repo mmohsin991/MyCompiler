@@ -28,12 +28,16 @@ class Assign{
     
     class func ID_Const_() -> Bool{
         
-        if Exp.Exp(){
+        if FuncCall.FuncCall(){
+            return true
+        }
+        else if Exp.Exp(){
             return true
         }
         else if Const.Const(){
             return true
         }
+
         
         return false
     }
@@ -53,7 +57,7 @@ class Assign{
     
     class func SecID_Const_(className : String) -> Bool{
         
-        return Const.SecConst(className) ||  Exp.SecExp(className)
+        return Const.SecConst(className) ||  Exp.SecExp(className) || FuncCall.SecFuncCall(className)
     }
     
     

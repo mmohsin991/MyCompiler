@@ -14,12 +14,42 @@ class FuncCall{
     
     // CFGs
     class func FuncCall()->Bool{
-        
+        if globleTokens[globleIndex].classType == "Identifier"{
+            globleIndex++
+            if globleTokens[globleIndex].classType == "("{
+                globleIndex++
+                if Arg(){
+                    if globleTokens[globleIndex].classType == ")"{
+                        globleIndex++
+                        return true
+                    }
+                }
+            }
+        }
         
         return false
     }
     
     
+    
+    class func Arg()->Bool{
+        
+        if ID_Const.ID_Const(){
+            if globleTokens[globleIndex].classType == ","{
+                globleIndex++
+                if Arg(){
+                    return true
+                }
+            }
+        }
+        else if globleTokens[globleIndex].classType == ")"{
+            return true
+            
+        }
+        
+        
+        return false
+    }
     
     
     
