@@ -14,8 +14,31 @@ class Assign{
     // CFGs
     class func Assign()->Bool{
         
+        if ID.ID() {
+            if globleTokens[globleIndex].classType == "AssignmentOP" {
+                globleIndex++
+                if ID_Const_(){
+                    return true
+                }
+            }
+        }
+        
         return false
     }
+    
+    class func ID_Const_() -> Bool{
+        
+        if Exp.Exp(){
+            return true
+        }
+        else if Const.Const(){
+            return true
+        }
+        
+        return false
+    }
+    
+    
     
     
     
