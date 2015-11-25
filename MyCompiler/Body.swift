@@ -33,7 +33,7 @@ class Body{
             }
         }
             // follow of body = "$$$" (End of File)
-        else if globleTokens[globleIndex].value == "}" || globleTokens[globleIndex].value == "$$$"{
+        else if Follow(globleTokens[globleIndex].value){
             return true
         }
         
@@ -75,6 +75,10 @@ class Body{
         else if FuncCall.FuncCall(){
             return true
         }
+        else if Return.Return(){
+            return true
+        }
+        
         
         
         return false
@@ -106,6 +110,14 @@ class Body{
             IncDec.SecIncDec(className) ||
             Assign.SecAssign(className) ||
             Func.SecFunc(className) ||
-            FuncCall.SecFuncCall(className)
+            FuncCall.SecFuncCall(className) ||
+            Return.SecReturn(className)
+
+    }
+    
+    
+    class func Follow(className : String) -> Bool{
+        // all non termonals , end of file, Switch
+        return className == "}" || className == "$$$" || Switch.SecGoTo(className)
     }
 }

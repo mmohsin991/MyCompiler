@@ -142,8 +142,8 @@ class Exp{
     
     
     class func Follow(className : String) -> Bool{
-        // Assign
-        return  Assign.Follow(className)
+        // Assign, switch
+        return  Assign.Follow(className) || className == ")"
     }
     
     

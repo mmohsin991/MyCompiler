@@ -14,7 +14,7 @@ class ID{
     // CFGs
     class func ID()->Bool{
         
-        if SecID( globleTokens[globleIndex].classType){
+        if SecID(globleTokens[globleIndex].classType){
             globleIndex++
             if ID_(){
                 return true

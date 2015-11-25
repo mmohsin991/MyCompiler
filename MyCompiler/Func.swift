@@ -15,11 +15,60 @@ class Func{
     // CFGs
     class func Func()->Bool{
         
+        if globleTokens[globleIndex].classType == "FUNC"{
+            globleIndex++
+            if globleTokens[globleIndex].classType == "Identifier"{
+                globleIndex++
+                if globleTokens[globleIndex].classType == "("{
+                    globleIndex++
+                    if Args(){
+                        if globleTokens[globleIndex].classType == ")"{
+                            globleIndex++
+                            if DT.DT(){
+                                if globleTokens[globleIndex].classType == "{"{
+                                    globleIndex++
+                                    if Body.Body(){
+                                        if globleTokens[globleIndex].classType == "}"{
+                                            globleIndex++
+                                            return true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         
         return false
     }
     
     
+    class func Args()->Bool{
+        
+        if globleTokens[globleIndex].classType == "Identifier"{
+            globleIndex++
+            if globleTokens[globleIndex].classType == ":"{
+                globleIndex++
+                if DT.DT(){
+                    if globleTokens[globleIndex].classType == ","{
+                        globleIndex++
+                        if Args() {
+                            return true
+                        }
+                    }
+                }
+            }
+        }
+        else if globleTokens[globleIndex].classType == ")"{
+            return true
+            
+        }
+        
+        
+        return false
+    }
     
     
     

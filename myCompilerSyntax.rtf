@@ -58,4 +58,42 @@ VAR id : INT = 12 \
 count = count+1\
 \}\
 WHILE ( count < 23)\
+\
+\
+\
+SWITCH(count)\{\
+DEFAULT:\
+VAR id : STRING = \'93Mohsin\'94\
+\}\
+\
+SWITCH(count)\{\
+CASE 2:\
+VAR id : STRING = \'93Ali\'94\
+\
+DEFAULT:\
+VAR id : STRING = \'93Mohsin\'94\
+\}\
+\
+SWITCH(count)\{\
+CASE 2:\
+VAR id : STRING = \'93Ali\'94\
+GOTHROUGH\
+\
+DEFAULT:\
+VAR id : STRING = \'93Mohsin\'94\
+\}\
+\
+\
+FUNC myFunc (x: INT,)INT\{\
+VAR id : INT = 12\
+\
+RETURN 2\
+\}\
+\
+FUNC myFunc (age: INT, name: STRING,) INT \{\
+VAR id : INT = 12\
+\
+RETURN id\
+\}\
+\
 }
