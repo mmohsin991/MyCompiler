@@ -14,6 +14,10 @@ class ROP{
     // CFGs
     class func ROP()->Bool{
         
+        if globleTokens[globleIndex].classType == "RelOP"{
+            globleIndex++
+            return true
+        }
         
         return false
     }

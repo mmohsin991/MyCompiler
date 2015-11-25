@@ -16,11 +16,48 @@ class Cond{
     class func Cond()->Bool{
         
         
+        if ID_Const.ID_Const() {
+            if ROP.ROP() {
+                if ID_Const.ID_Const() {
+                    if Cond_() {
+                        return true
+                    }
+                }
+            }
+        }
+        
+
+        return false
+    }
+    
+    
+    class func Cond_()->Bool{
+        
+        
+        if Logic(){
+            if Cond(){
+                return true
+            }
+        }
+        else if Follow(globleTokens[globleIndex].classType){
+            return true
+        }
+        
         return false
     }
     
     
     
+    class func Logic()->Bool{
+        
+        // for && or || logical op
+        if globleTokens[globleIndex].classType == "Logical" {
+            globleIndex++
+            return true
+        }
+        
+        return false
+    }
     
     
     

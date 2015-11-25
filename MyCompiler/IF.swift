@@ -15,12 +15,80 @@ class IF{
     // CFGs
     class func If()->Bool{
         
+        if globleTokens[globleIndex].classType == "IF" {
+            globleIndex++
+            if globleTokens[globleIndex].classType == "(" {
+                globleIndex++
+                if Cond.Cond(){
+                    if globleTokens[globleIndex].classType == ")" {
+                        globleIndex++
+                        if globleTokens[globleIndex].classType == "{" {
+                            globleIndex++
+                            if Body.Body(){
+                                if globleTokens[globleIndex].classType == "}" {
+                                    globleIndex++
+                                    if Else() {
+                                        return true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        return false
+    }
+    
+        
+
+    class func Else() -> Bool{
+        
+        
+        if globleTokens[globleIndex].classType == "ELSE" {
+            globleIndex++
+            if IF_() {
+                return true
+            }
+        }
+        else if Follow(globleTokens[globleIndex].classType){
+            return true
+        }
+        
         
         return false
     }
     
     
-    
+    class func IF_() -> Bool{
+        
+        
+        if globleTokens[globleIndex].classType == "IF" {
+            globleIndex++
+            if globleTokens[globleIndex].classType == "{" {
+                globleIndex++
+                if Body.Body(){
+                    if globleTokens[globleIndex].classType == "}" {
+                        globleIndex++
+                        return true
+                    }
+                }
+            }
+        }
+        else if globleTokens[globleIndex].classType == "{" {
+            globleIndex++
+            if Body.Body(){
+                if globleTokens[globleIndex].classType == "}" {
+                    globleIndex++
+                    return true
+                }
+            }
+        }
+        
+        return false
+    }
     
     
     

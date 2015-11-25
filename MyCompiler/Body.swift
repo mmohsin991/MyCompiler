@@ -26,6 +26,7 @@ class Body{
     
     
     class func MST()->Bool{
+        
         if SST(){
             if MST(){
                 return true
@@ -33,7 +34,6 @@ class Body{
         }
             // follow of body = "$$$" (End of File)
         else if globleTokens[globleIndex].value == "}" || globleTokens[globleIndex].value == "$$$"{
-            globleIndex++
             return true
         }
         
