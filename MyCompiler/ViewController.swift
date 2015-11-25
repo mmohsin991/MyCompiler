@@ -195,7 +195,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             self.lblSyntaxMessage.title = " Syntax Failed \n Line # \(globleTokens[globleIndex].lineNumber)"
 
             print("Syntax Failed")
-            print("\nLine # \(globleTokens[globleIndex].lineNumber)")
+            print("\nLine # \(globleTokens[globleIndex].lineNumber)   class value : \(globleTokens[globleIndex].value)")
         }
         
         

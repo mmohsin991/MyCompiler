@@ -54,10 +54,7 @@ class Body{
         else if ForEach.ForEach(){
             return true
         }
-        else if VarDec.VarDec(){
-            return true
-        }
-        else if ArrDec.ArrDec(){
+        else if VarArrDec.VarArrDec(){
             return true
         }
         else if While.While(){

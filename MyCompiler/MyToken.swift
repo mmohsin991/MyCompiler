@@ -180,7 +180,7 @@ class MyToken {
         
             // End Of File
         else if str == "$$$" {
-            return MyToken(value: str, classType: "End Of File", lineNumber: lineNumber)
+            return MyToken(value: str, classType: str, lineNumber: lineNumber)
         }
         
         return MyToken(value: str, classType: "LEXICAL ERROR", lineNumber: lineNumber)

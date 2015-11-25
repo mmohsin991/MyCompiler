@@ -15,22 +15,12 @@ class VarDec{
     // CFGs
     class func VarDec()->Bool{
         
-        if globleTokens[globleIndex].classType == "VAR" {
-            globleIndex++
-            if ID.SecID(globleTokens[globleIndex].classType){
-                globleIndex++
-                if globleTokens[globleIndex].classType == ":" {
-                    globleIndex++
-                    if DT.DT(){
-                        if Init(){
-                            return true
-                        }
-                    }
-                }
+        
+        if DT.DT(){
+            if Init(){
+                return true
             }
         }
-        
-        
         
         return false
     }
@@ -69,7 +59,7 @@ class VarDec{
     
     class func SecVarDec(className : String) -> Bool{
         
-        return className == "VAR"
+        return DT.SecDT(className)
     }
     
     class func SecInit(className : String) -> Bool{
