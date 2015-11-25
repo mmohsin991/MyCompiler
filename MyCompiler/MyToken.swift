@@ -138,10 +138,16 @@ class MyToken {
             else if count(str) == 2 && str[str.startIndex] == "-" && str[str.endIndex.predecessor()] == "-"{
                 return MyToken(value: str, classType: "INC/DEC", lineNumber: lineNumber)
             }
+                
             else{
                 return MyToken(value: str, classType: "LEXICAL ERROR", lineNumber: lineNumber)
             }
         }
+            // special character for -- decrement
+        else if str == "\u{2014}"{
+            return MyToken(value: str, classType: "INC/DEC", lineNumber: lineNumber)
+        }
+            
             
             // Arthmitaic Operators
         else if str[str.startIndex] == "*"||str[str.startIndex] == "/"||str[str.startIndex] == "%"{

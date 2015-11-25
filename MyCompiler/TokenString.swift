@@ -207,6 +207,12 @@ class TokenString {
         case "!" :
             return true
             
+        // sepcial character for DEC --
+        case "\u{2014}":
+            return true
+            
+            
+            
         default :
             return false
         }
@@ -316,6 +322,8 @@ class TokenString {
                 temp.append(char)
                 continue
             }
+            
+            
             
             // word break
             if isPunctuator(char) {

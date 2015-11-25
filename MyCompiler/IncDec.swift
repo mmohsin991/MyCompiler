@@ -14,11 +14,60 @@ class IncDec{
     // CFGs
     class func IncDec()->Bool{
         
+        if ID_Arr() {
+            if IncDec_(){
+                return true
+            }
+        }
+        
+        
         
         return false
     }
     
     
+    class func ID_Arr() -> Bool{
+        if globleTokens[globleIndex].classType == "Identifier" {
+            globleIndex++
+            if Arr(){
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    
+    class func IncDec_() -> Bool{
+        // for ++ , --
+        if globleTokens[globleIndex].classType == "INC/DEC" {
+            globleIndex++
+            return true
+        }
+        
+        return false
+    }
+    
+    
+    class func Arr() -> Bool{
+        if globleTokens[globleIndex].classType == "[" {
+            globleIndex++
+            if ID_Const.ID_Const(){
+                if globleTokens[globleIndex].classType == "]" {
+                    globleIndex++
+                    if Arr(){
+                        return true
+                    }
+                }
+            }
+        }
+        else if SecIncDec_(globleTokens[globleIndex].classType)  {
+            return true
+        }
+        
+        return false
+    }
+
     
     
     
@@ -32,7 +81,7 @@ class IncDec{
     
     class func SecIncDec_(className : String) -> Bool{
         
-        return className == "+" || className == "-"
+        return className == "INC/DEC" 
     }
     
     class func SecArr(className : String) -> Bool{
