@@ -15,6 +15,33 @@ class DoWhile{
     // CFGs
     class func DoWhile()->Bool{
         
+        if globleTokens[globleIndex].classType == "DO" {
+            globleIndex++
+            if globleTokens[globleIndex].classType == "{" {
+                globleIndex++
+                if Body.Body(){
+                    if globleTokens[globleIndex].classType == "}" {
+                        globleIndex++
+                        if globleTokens[globleIndex].classType == "WHILE" {
+                            globleIndex++
+                            if globleTokens[globleIndex].classType == "(" {
+                                globleIndex++
+                                if Cond.Cond(){
+                                    if globleTokens[globleIndex].classType == ")" {
+                                        globleIndex++
+                                        return true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
+            
+
+        }
         
         return false
     }
