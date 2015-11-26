@@ -942,7 +942,7 @@ $$$</string>
                                     <constraint firstAttribute="height" constant="23" id="8l5-ZQ-59F"/>
                                     <constraint firstAttribute="width" constant="224" id="yKA-g1-diH"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tokens:" id="PkI-QS-rke">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="LEXICAL ANALYZER (Tokens):" id="PkI-QS-rke">
                                     <font key="font" metaFont="system" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
